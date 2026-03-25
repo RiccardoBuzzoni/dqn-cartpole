@@ -43,8 +43,7 @@ dqn-cartpole/
 │   ├── model.py            # DQN neural network (3-layer fully connected)
 │   ├── replay_buffer.py    # Experience Replay Buffer (deque-based)
 │   ├── agent.py            # DQN Agent (action selection + learning)
-│   ├── train.py            # Training loop + plotting
-│   └── test_components.py  # Sanity checks for all components
+│   └── train.py            # Training loop + plotting
 │
 ├── notebooks/
 │   └── exploration.ipynb   # Interactive walkthrough of the project
