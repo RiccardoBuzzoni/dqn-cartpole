@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------ #
+#  IMPORTANT: Install PyTorch FIRST, separately, before running:
+#  pip install -r requirements.txt
+#
+#  Choose the command that matches your hardware:
+#
+#  CPU only:
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+#  NVIDIA GPU (CUDA 11.8):
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+#  NVIDIA GPU (CUDA 12.1):
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+#  Not sure which CUDA version you have? Run:
+#    nvidia-smi
+# ------------------------------------------------------------------ #
+
+# Deep Learning (installed separately, see above)
+torch
+torchvision
+
+# Reinforcement Learning Environment
+gymnasium>=0.29.0
+
+# Visualization & Logging
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Jupyter Notebook
+jupyter>=1.0.0
+ipykernel>=6.0.0
+pyyaml>= 6.0.0
+
+# Networking dependencies (required by jupyterlab and httpx)
+idna>=2.8
+requests>=2.31
