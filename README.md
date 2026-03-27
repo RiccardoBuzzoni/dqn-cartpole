@@ -6,6 +6,10 @@ This project was built as a portfolio piece to demonstrate core Deep Reinforceme
 
 ![Training Curve](results/training_curve.png)
 
+## 🎮 Demo
+ 
+![Demo](assets/demo.gif)
+
 ---
 
 ## 🎯 What is CartPole?
