@@ -42,6 +42,8 @@ dqn-cartpole/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+├── Dockerfile
+├── .dockerignore
 │
 ├── src/
 │   ├── model.py            # DQN neural network (3-layer fully connected)
@@ -110,6 +112,54 @@ pip install -r requirements.txt
 ```bash
 python -m ipykernel install --user --name dqn-cartpole --display-name "DQN CartPole"
 ```
+
+---
+
+## 🐳 Docker
+
+If you prefer not to setup a Conda environment, you can run the project in a Docker container.
+
+The image uses `python:3.10-slim` as base and installs PyTorch via pip. It automatically trains on GPU if available, falling back to CPU otherwise — no code changes needed.
+
+### Build the image
+ 
+```bash
+# Default: CPU only
+docker build -t dqn-cartpole .
+ 
+# GPU (NVIDIA CUDA 11.8)
+docker build --build-arg TORCH_INDEX=https://download.pytorch.org/whl/cu118 -t dqn-cartpole .
+ 
+# GPU (NVIDIA CUDA 12.1)
+docker build --build-arg TORCH_INDEX=https://download.pytorch.org/whl/cu121 -t dqn-cartpole .
+```
+ 
+### Train the agent
+ 
+```bash
+# CPU only
+docker run -v $(pwd)/results:/app/results dqn-cartpole
+ 
+# GPU (NVIDIA)
+docker run --gpus all -v $(pwd)/results:/app/results dqn-cartpole
+```
+ 
+### Record the demo GIF
+ 
+```bash
+# CPU only
+docker run -v $(pwd)/results:/app/results \
+           -v $(pwd)/assets:/app/assets \
+           dqn-cartpole python src/record_demo.py
+ 
+# GPU (NVIDIA)
+docker run --gpus all \
+           -v $(pwd)/results:/app/results \
+           -v $(pwd)/assets:/app/assets \
+           dqn-cartpole python src/record_demo.py
+```
+
+> 💡 Unsure whether your GPU is CUDA-capable? Run `nvidia-smi` in your terminal. If the command is not found, use the CPU-only build.
 
 ---
 

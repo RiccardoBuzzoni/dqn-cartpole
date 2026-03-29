@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Conda / Virtual environments
+.conda/
+.env
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Saved models and results
+results/
+assets/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
