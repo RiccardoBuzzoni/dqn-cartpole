@@ -194,13 +194,6 @@ After training, two files are saved in `results/`:
 - `dqn-cartpole.pth` — the best model checkpoint
 - `training_curve.png` — the reward plot
 
-### Run the sanity checks
-
-```bash
-cd src
-python test_components.py
-```
-
 ### Explore the notebook
 
 ```bash
