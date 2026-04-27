@@ -49,7 +49,9 @@ dqn-cartpole/
 │   ├── model.py            # DQN neural network (3-layer fully connected)
 │   ├── replay_buffer.py    # Experience Replay Buffer (deque-based)
 │   ├── agent.py            # DQN Agent (action selection + learning)
-│   └── train.py            # Training loop + plotting
+│   ├── train.py            # Training loop + plotting
+│   ├── record_demo.py      # Records a GIF of the trained agent
+│   └── demo_app.py         # Launches application to show real-time agent performance
 │
 ├── notebooks/
 │   └── exploration.ipynb   # Interactive walkthrough of the project
@@ -143,6 +145,43 @@ docker run -v $(pwd)/results:/app/results dqn-cartpole
 # GPU (NVIDIA)
 docker run --gpus all -v $(pwd)/results:/app/results dqn-cartpole
 ```
+
+### Run the interactive demo
+ 
+Watch the trained agent play in real time with a pygame window showing live stats.
+ 
+```bash
+cd src
+python demo_app.py
+```
+ 
+**Controls:**
+ 
+| Key | Action |
+|---|---|
+| SPACE | Play / Pause |
+| R | Reset episode |
+| ESC | Quit |
+ 
+---
+ 
+### Build the standalone .exe (Windows only)
+ 
+Generate a self-contained executable that runs the demo without requiring Python installed.
+ 
+```bash
+# Install PyInstaller
+pip install pyinstaller
+ 
+# Build the .exe from the project root
+python build_exe.py
+```
+ 
+The executable will be saved to `dist/DQN-CartPole-Demo.exe` and can be shared with anyone -- no Python or dependencies required.
+ 
+> Warning: PyInstaller must be run on **Windows natively**, not inside WSL.
+ 
+---
  
 ### Record the demo GIF
  

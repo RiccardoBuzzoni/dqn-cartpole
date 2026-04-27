@@ -36,6 +36,9 @@ jupyter>=1.0.0
 ipykernel>=6.0.0
 pyyaml>= 6.0.0
 
+# Standalone .exe build (Windows only)
+pyinstaller>=6.0.0
+
 # Indirect dependencies (required by internal packages)
 pyyaml>=6.0.0
 idna>=2.8
